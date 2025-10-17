@@ -11,6 +11,7 @@ export default function useOrder() {
     function addItem(element : Foods) {
 
         const ItemExist = order.find(orderItem => orderItem.id == element.id)
+
         if (ItemExist) {
             const UpdatedItem = order.map(orderItem => orderItem.id == element.id ? 
                 {...orderItem, quantity : orderItem.quantity + 1} : orderItem )
@@ -23,10 +24,9 @@ export default function useOrder() {
             }
     }
 
-console.log(order)
 
     return{
-
+        order,
         addItem
 
     }

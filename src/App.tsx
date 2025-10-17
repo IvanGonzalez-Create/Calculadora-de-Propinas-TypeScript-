@@ -1,11 +1,12 @@
 import { menuItems } from "../src/data/DataBase"
 import  MenuItems  from "../src/components/MenuItems"
 import useOrder from "./hooks/useOrder"
+import OrderContents from "./components/OrderContents"
 
 
 function App() {
 
-  const { addItem } = useOrder()
+  const { order ,addItem } = useOrder()
   
   return (
 
@@ -21,7 +22,7 @@ function App() {
 
       <div>
      
-      <h2 className="text-4xl font-semibold text-sky-700 tracking-wide uppercase border-b-2 border-sky-300 pb-1 mb-4">Menu</h2>
+      <h2 className="text-4xl font-semibold text-sky-700 tracking-wide uppercase border-b-2 border-sky-300 pb-1 mb-4"> Menu </h2>
 
         <div className="space-y-4">
 
@@ -40,8 +41,10 @@ function App() {
 
   
       <div>
-    
-          <h2>Consumo</h2> 
+        
+       <OrderContents
+       order = {order}
+       />
 
       </div>
 

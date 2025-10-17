@@ -14,8 +14,10 @@ export default function MenuItems({item, addItem} : MenuitemsProps) {
 
   return (
 
+    
+
 <button className="w-full flex justify-between items-center bg-white rounded-xl shadow-lg px-5 py-4 hover:shadow-2xl hover:bg-sky-300 transition-all duration-50"
-//Logica a implementar
+
 onClick = {() => addItem(item)}
 >
   <p className="text-sky-800 font-medium">{item.name}</p>
