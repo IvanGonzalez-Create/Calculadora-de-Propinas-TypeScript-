@@ -1,5 +1,5 @@
 import type { OrderItem } from "../types"
-
+import { FormatCurrency } from "../Helpers"
 
 type OrderProps = {
     order : OrderItem[]
@@ -20,9 +20,29 @@ export default function OrderContents({order} : OrderProps)  {
         <div>
             {order.length == 0 ? <p>La orden esta vacia</p> 
             : order.map(order =>
-            <div key={order.id}>
+            <div 
+            className="items-center bg-white rounded-lg border border-sky-200 shadow-sm px-5 py-3 hover:shadow-md transition-all duration-200"
+            key={order.id}>
 
-                <p>{order.name}</p>
+                <p className="text-sky-800 font-medium tracking-wide">
+
+                  {order.name} - {FormatCurrency(order.price)} Unidad 
+
+                </p>
+
+                <p className="text-teal-950 font-semibold text-right">
+
+                  Cantidad: {order.quantity} - {FormatCurrency(order.price * order.quantity)}
+
+                </p>
+                <button
+                className=" text-red-600 hover:scale-120 transition-all duration-150 font-bold cursor-pointer"
+        
+                
+                >
+                  X
+
+                </button>
 
             </div>
             )
