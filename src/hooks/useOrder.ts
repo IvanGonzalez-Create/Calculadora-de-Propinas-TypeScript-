@@ -24,10 +24,17 @@ export default function useOrder() {
             }
     }
 
+    function DropElementToOrder(id : Foods["id"]) {
+
+        setOrder(order.filter(ItemOrder => ItemOrder.id !== id))
+
+    }
+
 
     return{
         order,
-        addItem
+        addItem,
+        DropElementToOrder
 
     }
 

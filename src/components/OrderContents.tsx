@@ -1,11 +1,12 @@
-import type { OrderItem } from "../types"
+import type { Foods, OrderItem } from "../types"
 import { FormatCurrency } from "../Helpers"
 
 type OrderProps = {
-    order : OrderItem[]
+    order : OrderItem[],
+    DropElementToOrder : (id : Foods["id"]) => void
 }
 
-export default function OrderContents({order} : OrderProps)  {
+export default function OrderContents({order, DropElementToOrder} : OrderProps)  {
 
 
 
@@ -37,7 +38,7 @@ export default function OrderContents({order} : OrderProps)  {
                 </p>
                 <button
                 className=" text-red-600 hover:scale-120 transition-all duration-150 font-bold cursor-pointer"
-        
+                onClick={() => DropElementToOrder(order.id)}
                 
                 >
                   X

@@ -6,7 +6,7 @@ import OrderContents from "./components/OrderContents"
 
 function App() {
 
-  const { order ,addItem } = useOrder()
+  const { order ,addItem, DropElementToOrder } = useOrder()
   
   return (
 
@@ -44,6 +44,7 @@ function App() {
         
        <OrderContents
        order = {order}
+       DropElementToOrder = {DropElementToOrder}
        />
 
       </div>
