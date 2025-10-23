@@ -2,6 +2,8 @@ import { menuItems } from "../src/data/DataBase"
 import  MenuItems  from "../src/components/MenuItems"
 import useOrder from "./hooks/useOrder"
 import OrderContents from "./components/OrderContents"
+import OrderTotals from "./components/OrderTotals"
+import TipsPercentajeForms from "./components/TipsPercentajeForms"
 
 
 function App() {
@@ -40,14 +42,27 @@ function App() {
 
 
   
-      <div>
+      <div className="space-y-6">
         
        <OrderContents
        order = {order}
        DropElementToOrder = {DropElementToOrder}
        />
 
+       <TipsPercentajeForms
+       />
+
+
+       <OrderTotals
+       order = {order}
+
+       />
+
       </div>
+
+      
+          
+
 
   </main>
     

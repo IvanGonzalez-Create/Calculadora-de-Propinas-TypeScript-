@@ -19,7 +19,7 @@ export default function OrderContents({order, DropElementToOrder} : OrderProps) 
 
 
         <div>
-            {order.length == 0 ? <p>La orden esta vacia</p> 
+            {order.length == 0 ? <p className="font-black text-3xl">La orden esta vacia</p> 
             : order.map(order =>
             <div 
             className="items-center bg-white rounded-lg border border-sky-200 shadow-sm px-5 py-3 hover:shadow-md transition-all duration-200"
