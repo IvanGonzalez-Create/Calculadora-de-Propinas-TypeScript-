@@ -8,7 +8,7 @@ import TipsPercentajeForms from "./components/TipsPercentajeForms"
 
 function App() {
 
-  const { order ,tip ,setTip ,addItem, DropElementToOrder } = useOrder()
+  const { order ,tip ,setTip ,addItem, DropElementToOrder, SaveOrder } = useOrder()
   
   return (
 
@@ -43,23 +43,33 @@ function App() {
 
   
       <div className="space-y-6">
-        
-       <OrderContents
-       order = {order}
-       DropElementToOrder = {DropElementToOrder}
-       />
+      <h1 className="text-4xl font-semibold text-sky-700 tracking-wide uppercase border-b-2 border-sky-300 pb-1 mb-4">consumo</h1>
 
+      {order.length ? (
+      <>
+
+      <OrderContents
+        order = {order}
+        DropElementToOrder = {DropElementToOrder}
+      />
+ 
       <TipsPercentajeForms
-      setTip={setTip}
-      
+       setTip = {setTip}
+       tip = {tip}
+       
+      />
+ 
+ 
+      <OrderTotals
+        order = {order}
+        tip = {tip}
+        SaveOrder = {SaveOrder}
       />
 
+      </>
+      ) : (<p className="font-black text-3xl">La orden esta vacia</p>
 
-       <OrderTotals
-       order = {order}
-       tip = {tip}
-
-       />
+      )}
 
       </div>
 

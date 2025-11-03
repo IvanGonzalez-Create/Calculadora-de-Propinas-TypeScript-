@@ -30,13 +30,19 @@ export default function useOrder() {
 
     }
 
+    function SaveOrder() {
+        setOrder([])
+        setTip(0)
+    }
+
 
     return{
         order,
         tip,
         setTip,
         addItem,
-        DropElementToOrder
+        DropElementToOrder,
+        SaveOrder
 
     }
 

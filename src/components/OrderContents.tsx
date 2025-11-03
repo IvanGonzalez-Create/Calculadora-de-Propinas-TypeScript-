@@ -15,12 +15,10 @@ export default function OrderContents({order, DropElementToOrder} : OrderProps) 
 
     <div>
 
-        <h1 className="text-4xl font-semibold text-sky-700 tracking-wide uppercase border-b-2 border-sky-300 pb-1 mb-4">consumo</h1>
-
-
+        
         <div>
-            {order.length == 0 ? <p className="font-black text-3xl">La orden esta vacia</p> 
-            : order.map(order =>
+            
+            {order.map(order =>
             <div 
             className="items-center bg-white rounded-lg border border-sky-200 shadow-sm px-5 py-3 hover:shadow-md transition-all duration-200"
             key={order.id}>
